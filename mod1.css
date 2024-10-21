@@ -1,0 +1,343 @@
+:root {
+  --link-color: #fe7867;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+hr {
+  border: 0;
+  height: 5px;
+  background: #fe7867;
+  margin: 20px 0;
+}
+
+img {
+  width: 100px;
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+nav {
+flex: 1;
+text-align: right;
+}
+nav ul{
+  display: inline-block;
+  list-style: none;
+}
+
+/* SLIDER  */ 
+
+.slider {
+  position: relative;
+  max-width: 1200px;
+  margin: 50px auto;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 200px;
+  color: #fe7867; /* Цвет текста */
+  font-size: 36px;
+  background-size: cover; /* Для правильного отображения фона */
+  background-position: center; /* Центрирование фона */
+}
+
+.slide1 {
+  background-image: url('sommer\ angebot.jpg'); /* Путь к изображению */
+}
+
+.slide2 {
+  background-image: url('samsung.jpg'); /* Путь к изображению */
+}
+
+
+.navigation {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navigation label {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  background-color: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#slide1:checked ~ .slides {
+  transform: translateX(0);
+}
+
+#slide2:checked ~ .slides {
+  transform: translateX(-100%);
+}
+
+
+input[type="radio"]:checked + .navigation label {
+  background-color: #007bff;
+}
+
+
+
+/* */
+nav ul li{
+display: inline-block;
+margin-right: 20px;
+}
+
+a{
+text-decoration: none;
+color: #555;
+}
+
+p{
+  color: #555;
+  }
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.row {
+  display: flex; /* Включаем Flexbox */
+  flex-wrap: wrap; /* Чтобы элементы переносились на новую строку, если не помещаются */
+  justify-content: space-between; /* Распределение картинок с равными промежутками */
+}
+
+.small-container {
+  max-width: 1080px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.col-4 {
+  flex-basis: 30%;
+  padding: 10px;
+  min-width: 200px;
+  margin-bottom: 50px;
+  text-align: center;
+  transition: transform 0.5s;
+}
+.col-4 img{
+  width: width: 100%;
+  max-width: 250px;
+  
+}
+
+.col-4:hover {
+  transform: scale(1.1); /* Увеличивает элемент при наведении */
+}
+
+
+.rating .fa{
+  color: #fe7867;
+}
+.title {
+  text-align: center;
+  margin: 0 auto 40px;
+  position: relative;
+  line-height: 60px;
+  color: #555
+}
+
+.product--details {
+  background-color: #fe7867;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Flexbox для размещения карты и формы */
+.contact-section .group {
+  display: flex;
+  flex-direction: row; /* Рядом друг с другом */
+  gap: 50px; /* Пробел между элементами */
+  justify-content: space-between; /* Распределяем элементы по ширине */
+  align-items: flex-start; /* Выравниваем элементы по верху */
+  padding: 0 70px;
+  margin-bottom: 50px;
+}
+
+.contact-section .text {
+  flex: 1; /* Ширина карты */
+}
+
+.contact-section .group form {
+  flex: 1; /* Ширина формы */
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section .group form input,
+.contact-section .group form textarea {
+  font-family: 'Poppins', sans-serif;
+  border: 2px solid var(--link-color);
+  background-color: transparent;
+  padding: 10px;
+  margin-bottom: 15px;
+  outline: none;
+  resize: none;
+}
+
+.contact-section .group form button {
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  color: #100e0e;
+  background-color: var(--link-color);
+  border: none;
+  height: 50px;
+  cursor: pointer;
+  transition: .1s;
+}
+
+.contact-section .group form button:hover {
+  filter: brightness(.9);
+}
+
+@media (max-width: 768px) {
+  .contact-section .group {
+    flex-direction: column; /* Вертикальная ориентация на маленьких экранах */
+  }
+  .slider {
+    max-width: 100%;
+  }
+
+  .slide {
+    font-size: 24px; /* Уменьшаем размер шрифта в слайдере */
+    padding: 100px 20px; /* Уменьшаем отступы */
+  }
+
+
+  .myButton {
+    font-size: 20px; /* Уменьшаем размер кнопок */
+    padding: 10px 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1, h2 {
+    font-size: 18px; /* Уменьшаем заголовки */
+  }
+
+  .slide {
+    font-size: 18px;
+    padding: 50px 10px;
+  }
+
+  .myButton {
+    font-size: 18px; /* Размер текста на экранах до 480px */
+    padding: 12px 40px; /* Отступы на экранах до 480px */
+  }
+  
+  .container, .small-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  footer {
+    font-size: 12px; /* Уменьшаем текст в футере */
+  }
+}
+
+ /* Footer  */  
+
+footer {
+  background-color: #333; /* Темный фон футера */
+  padding: 20px 0;
+  text-align: center;
+  color: #fff; /* Текст белого цвета */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.social-icons {
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  color: #fff; /* Белый цвет иконок по умолчанию */
+  font-size: 24px; /* Размер иконок */
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #fe7867; /* Цвет при наведении (например, синий) */
+}
+
+
+footer p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Кнопки */
+
+.button-container {
+  display: flex;
+  justify-content: center;  /* Центровка по горизонтали */
+  align-items: center;      /* Центровка по вертикали */
+}
+
+.myButton {
+  background-color: transparent;
+  border-radius: 28px;
+  border: 3px solid #fe7867;
+  display: inline-block;
+  cursor: pointer;
+  color: #fe7867;
+  font-family: Arial;
+  font-size: 32px; /* Базовый размер текста для больших экранов */
+  padding: 22px 76px; /* Базовые отступы для больших экранов */
+  text-decoration: none;
+  transition: all 0.3s ease; /* Анимация для плавного изменения */
+}
+
+.myButton:hover {
+  background-color: #fe7867;
+  color: white;
+}
+
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
